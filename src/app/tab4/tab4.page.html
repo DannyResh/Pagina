@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Armas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Armas</ion-title>
+    </ion-toolbar>
+  </ion-header>
+ 
+      <div *ngFor="let item of varWeapons">
+        <ion-list>
+          <ion-item (click)="dynamicApiCallWeapons(item)">
+            <ion-avatar slot="start">
+              <img src="./assets/Weapons/{{item}}.png">
+            </ion-avatar>
+              <ion-label>
+                {{item}}
+              </ion-label>
+              <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+          </ion-item>
+      </ion-list>
+      </div>
+</ion-content>

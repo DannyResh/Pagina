@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{this.type}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf= "type == 'Artefacto'">
+    <ion-card>
+      <ion-card-header>
+      <ion-card-title>Set: {{this.modalObj.name}}  </ion-card-title>
+      <ion-card-subtitle>Rarity:{{this.modalObj.max_rarity}}*</ion-card-subtitle>
+      <ion-card-subtitle>2 piece bonus: {{this.modalObj["2-piece_bonus"]}}</ion-card-subtitle>
+      <ion-card-subtitle>4 piece bonus: {{this.modalObj["4-piece_bonus"]}}</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div *ngIf = "type == 'Personaje'">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Character: {{this.modalObj.name}}</ion-card-title>
+        <ion-card-subtitle><p>Vision: {{this.modalObj.vision}}</p></ion-card-subtitle>
+        <ion-card-subtitle> <p>Weapon: {{this.modalObj.weapon}}</p></ion-card-subtitle>
+        <ion-card-subtitle><p>Rarity: {{this.modalObj.rarity}}*</p>    </ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        {{this.modalObj.description}}
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div *ngIf = "type == 'Arma'">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Weapon: {{this.modalObj.name}}</ion-card-title>
+        <ion-card-subtitle><p>Type: {{this.modalObj.type}}</p></ion-card-subtitle>
+        <ion-card-subtitle> <p>Rarity: {{this.modalObj.rarity}}*</p></ion-card-subtitle>
+        <ion-card-subtitle><p>Sub Stat: {{this.modalObj.subStat}}</p>    </ion-card-subtitle>
+      </ion-card-header>
+    
+     </ion-card>
+  </div>
+</ion-content>
